@@ -1,83 +1,83 @@
 {
   "basics": {
-    "name": "Molly Maluhia",
-    "label": "Student",
-    "picture": "https://techfolios.github.io/template/images/molly.png",
-    "email": "molly@hawaii.edu",
-    "phone": "808-333-4444",
-    "website": "https://mmaluhia.github.io",
-    "summary": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Spring, 2020.",
+    "name": "John David Balgos",
+    "label": "Linux Administrator",
+    "picture": "https://techfolios.github.io/template/images/jdbalgos-image.png",
+    "email": "jdbalgos@gmail.com",
+    "phone": "",
+    "website": "https://jdbalgos.github.io",
+    "summary": "I am a Linux Server Administrator located in Philippines with personal interest in Linux and Automation.",
     "location": {
       "address": "",
-      "postalCode": "96822",
-      "city": "Honolulu",
-      "countryCode": "USA",
-      "region": "Hawaii"
+      "postalCode": "",
+      "city": "Bacoor",
+      "countryCode": "Philippines",
+      "region": "Cavite"
     },
     "profiles": [
       {
         "network": "github",
-        "username": "mmaluhia",
-        "url": "http://github.com/changeme"
+        "username": "jdbalgos",
+        "url": "http://github.com/jdbalgos"
       },
       {
         "network": "linkedin",
-        "username": "mollymaluhia",
-        "url": "http://linkedin.com/in/changeme"
-      },
-      {
-        "network": "twitter",
-        "username": "mollymal",
-        "url": "http://twitter.com/changeme"
-      },
-      {
-        "network": "instagram",
-        "username": "molly",
-        "url": "http://instagram.com/changeme"
+        "username": "john-david-balgos-11b170a4",
+        "url": "https://www.linkedin.com/in/john-david-balgos-11b170a4"
       }
     ]
   },
   "interests": [
     {
-      "name": "internet of things",
+      "name": "Linux",
       "keywords": [
-        "Arduino",
-        "TI MSP430"
+        "RHEL",
+        "Ubuntu",
+        "CentOS"
       ]
     },
     {
-      "name": "data mining",
+      "name": "Automation",
       "keywords": [
-      ]
-    },
-    {
-      "name": "artificial intelligence",
-      "keywords": [
+        "Configuration Management",
+        "IoT",
+        "Robotics"
       ]
     }
   ],
   "skills": [
     {
-      "name": "Languages and Frameworks",
+      "name": "Operating System",
       "level": "",
       "keywords": [
-        "C",
-        "C++",
-        "Java",
-        "Javascript",
-        "Assembly",
-        "Common Lisp"
+        "CentOS",
+        "RHEL",
+        "Ubuntu",
+        "Arch",
+        "Kali",
+        "Windows Server 2003-2016"
       ]
     },
     {
-      "name": "Toolsets/OS",
+      "name": "Languages and Frameworks",
       "level": "",
       "keywords": [
-        "MacOS",
-        "Ubuntu",
+        "BASH",
+        "Python",
+        "PHP",
+        "C/C++",
+        "Perl"
+      ]
+    },
+    {
+      "name": "Toolsets",
+      "level": "",
+      "keywords": [
+        "Vi/Vim",
+        "TMUX",
         "Git/GitHub",
-        "g++",
-        "TI LaunchPad"
+        "Markup Documentation",
+        "Lateral Movement"
       ]
     }
   ],
