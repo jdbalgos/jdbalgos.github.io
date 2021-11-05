@@ -29,37 +29,101 @@
   },
   "interests": [
     {
-      "name": "Linux",
+      "name": "Linux Server",
       "keywords": [
-        "RHEL",
-        "Ubuntu",
-        "CentOS"
-      ]
-    },
-    {
-      "name": "Automation",
-      "keywords": [
-        "Configuration Management",
-        "IoT",
-        "Robotics"
+        "Administration",
+        "Troubleshooting",
+        "Design and Implementation",
+        "Automation",
+        "Security"
       ]
     }
   ],
   "skills": [
     {
-      "name": "Operating System",
+      "name": "Operating Systems/Distribution",
       "level": "",
       "keywords": [
         "CentOS",
         "RHEL",
         "Ubuntu",
+        "SUSE",
         "Arch",
         "Kali",
         "Windows Server 2003-2016"
       ]
     },
     {
-      "name": "Languages and Frameworks",
+      "name": "Virtualization/Containerization",
+      "level": "",
+      "keywords": [
+        "VMware Vcenter",
+        "Proxmox",
+        "Virtualbox",
+        "LXC",
+        "Docker"
+      ]
+    },
+    {
+      "name": "Configuration Management",
+      "level": "",
+      "keywords": [
+        "Ansible",
+        "Puppet"
+      ]
+    },
+    {
+      "name": "Systems Management",
+      "level": "",
+      "keywords": [
+        "Spacewalk"
+      ]
+    },
+    {
+      "name": "Directory Management",
+      "level": "",
+      "keywords": [
+        "FreeIPA",
+        "OpenLDAP"
+      ]
+    },
+    {
+      "name": "Systems Monitoring",
+      "level": "",
+      "keywords": [
+        "Solarwinds",
+        "Nagios"
+      ]
+    },
+    {
+      "name": "Ticketing Services",
+      "level": "",
+      "keywords": [
+        "ServiceNow",
+        "osTicket"
+      ]
+    },
+    {
+      "name": "Documentation",
+      "level": "",
+      "keywords": [
+        "Mkdocs",
+        "Bookstack"
+      ]
+    },
+    {
+      "name": "Other Services",
+      "level": "",
+      "keywords": [
+        "Bacula Backup",
+        "LUN(iSCSI)/SAN(NFS) Storage",
+        "Web(Apache/Nginx/Tomcat)",
+        "DHCP/DNS",
+        "MySQL/PostgreSQL Databases"
+      ]
+    },
+    {
+      "name": "Programming/Scripting",
       "level": "",
       "keywords": [
         "BASH",
@@ -83,11 +147,21 @@
   ],
   "education": [
     {
-      "institution": "University of Hawaii, Honolulu, HI",
-      "area": "Computer Science (expected Spring, 2018)",
-      "studyType": "B.S.",
-      "startDate": "2013-09-01",
-      "endDate": "Present",
+      "institution": "Technological University of the Philippines - Cavite, Cavite, PH",
+      "area": "Electronics Engineering",
+      "studyType": "B.T.",
+      "startDate": "2017-06",
+      "endDate": "2018-04",
+      "gpa": "",
+      "courses": [
+      ]
+    },
+    {
+      "institution": "Technological University of the Philippines - Cavite, Cavite, PH",
+      "area": "Electronics Engineering Technology",
+      "studyType": "Vocational",
+      "startDate": "2014-04",
+      "endDate": "2009-05",
       "gpa": "",
       "courses": [
       ]
@@ -95,69 +169,60 @@
   ],
   "work": [
     {
-      "company": "UH Manoa Board of Publications",
-      "position": "Web Developer",
+      "company": "Conduent",
+      "position": "Linux Server Administrator",
       "website": "",
-      "startDate": "2015-08-01",
+      "startDate": "2021-01-11",
       "endDate": "Present",
-      "summary": "Head of online presence for Ka Leo",
+      "summary": "L1-L2 server technician for Dev/UAT/Prod servers",
       "highlights": [
-        "Maintain, update, and oversee official college newspaper website",
-        "Drive, design and build student-community projects for UH Manoa"
+        "Part of the Global command center that is based in Sandy, US",
+        "Respond to tickets raised from event monitoring and incidents logged by users.",
+        "Performs set of tasks needed to be done in the operating system based on client scope",
+        "Engagement on high priority tickets that needs fast resolution."
       ]
     },
     {
-      "company": "UH Information Technology Services",
-      "position": "Help Desk Consultant",
-      "website": "http://www.hawaii.edu/its/",
-      "startDate": "2015-01-01",
-      "endDate": "2016-03-15",
-      "summary": "",
-      "highlights": [
-        "Troubleshoot software, hardware and networking issues over the phone",
-        "Answer phone and email responses to the ITS Help Desk"
-      ]
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "Center for Renewable Energy and Island Sustainability",
-      "website": "http://manoa.hawaii.edu/reis",
-      "position": "Software Developer",
-      "startDate": "2016-01-01",
-      "endDate": "Present",
-      "summary": "Lead developer for weather sensing project",
-      "highlights": [
-        "Design firmware for distributed weather sensor network",
-        "Maintain custom data collection and storage infrastructure"
-      ]
-    },
-    {
-      "organization": "",
+      "company": "Cloudstaff Modern Workforce",
+      "position": "Technical Support II (LINUX)",
       "website": "",
-      "position": "Professional organization involvement",
-      "startDate": "",
-      "endDate": "",
-      "summary": "",
+      "startDate": "2018-07-16",
+      "endDate": "2020-01-09",
+      "summary": "L1-L2 desktop technician for client and internal employees",
       "highlights": [
-        "Chair, ACM Manoa, 2016-Present",
-        "Member, IEEE Student Branch, 2014-Present",
-        "Webmaster/IT Officer, IEEE Student Branch, UH Manoa, 2012-2013"
+        "On-site IT Technician of Workstation and Network infrastructures (WAN and LAN) in 2 office branches in Manila",
+        "Installing Workstations (Windows, Fedora, and Ubuntu: Desktops and Laptops) by configuring, testing and maintaining Operating Systems with Application Software and System Tools.",
+        "Resolving Helpdesk Ticket issues as Level 1 and 2 Tier Support or Escalate to NOC/Systems Team."
       ]
-    }
-  ],
-  "awards": [
-    {
-      "title": "B+ Scholarship",
-      "date": "2013-Present",
-      "awarder": "State of Hawaii",
-      "summary": "Scholarships awarded to incoming freshmen and continuing students who complete a rigorous high school curriculum with a minimum overall GPA of 3.0 at a Hawai'i public school."
     },
     {
-      "title": "First place",
-      "date": "2015",
-      "awarder": "University of Hawaii Micromouse Competition",
-      "summary": "My team won first place in 2015.  See my portfolio site for more details."
+      "company": "Callidus Ltd. Corporation",
+      "position": "IT Support",
+      "website": "",
+      "startDate": "2015-12-09",
+      "endDate": "2018-07-13",
+      "summary": "L1 desktop technician/reporting specialist for a small BPO company",
+      "highlights": [
+        "Resolving Network/Desktop/PBX issues and other IT concerns",
+        "Operating, and overseeing in and out data transfer to ZOHO CRM",
+        "Managing and configuring IP PBX server for client call-outs.",
+        "Daily Reporting of Agents Productivity, Call History and Call Recordings",
+        "Managing and  operating all CentOS MTA (Mail Transfer Agent) servers for email blast"      
+      ]
+    },
+    {
+      "company": "Gatepacific Circuits",
+      "position": "IT Technician",
+      "website": "",
+      "startDate": "2014-04-02",
+      "endDate": "2015-10-08",
+      "summary": "IT Support in an engineering company",
+      "highlights": [
+        "Designing, enhancing and installing Network Infrastructures of Gatepacific circuits upon transferring to PEZA-zoned office.",
+        "Installation and maintenance of all laptops, desktops, server and VOIP systems inside and outside (field projects) of the company.",
+        "Managing and Creating user accounts to Microsoft Office 365.",
+        "Managing and configuring IP PBX servers to handle incoming client calls"
+      ]
     }
   ],
   "references": [
