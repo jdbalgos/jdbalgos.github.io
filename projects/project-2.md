@@ -1,25 +1,22 @@
 ---
 layout: project
 type: project
-image: images/vacay-square.png
-title: Vacay
-permalink: projects/vacay
+image: images/project-robot-image-1.jpg
+title: Robotic arm
+permalink: projects/robotic-arm
 # All dates must be YYYY-MM-DD format!
-date: 2015-12-15
+date: 2013-10-03
 labels:
-  - Javascript
-  - Meteor
-  - MongoDB
-  - GitHub
-summary: A responsive web application for travel planning that my team developed in ICS 415.
+  - PIC16F877A
+  - Ultrasonic
+  - Mechatronix
+summary: A robotic arm that sense a bottle and moved it to the inner table
 ---
 
-<img class="ui medium right floated rounded image" src="../images/vacay-home-page.png">
+<img class="ui medium right floated rounded image" src="../images/project-robot-image-2.jpg">
 
-Vacay is a web application that I helped create as a team project in ICS 415, Spring 2015. The project helped me learn how to design and implement a responsive web site.
+This project is a simple robotic arm devices consisted of servo motors, HC-SR04 Ultrasonic sensor and PIC16F877A programmable IC. I was the only programmer at the time as i am the only one that who can(or willing to) program the IC.
 
-Vacay is implemented using [Meteor](http://meteor.com), a JavaScript application platform. Within two weeks, we created a website that implements several types of reservations including flights, hotels, and car rentals.
+Source Video: <a href="https://www.youtube.com/watch?v=gvVa_2aoiX4"><i class="large youtube icon"></i></a>
 
-In this project I gained experience with full-stack web application design and associated technologies, including [MongoDB](http://mongodb.com) for database storage, the [Twitter Bootstrap](http://getbootstrap.com/) CSS Framework for the user interface, and Javascript for both client and server-side programming. 
- 
-Source: <a href="https://github.com/theVacay/vacay"><i class="large github icon"></i>theVacay/vacay</a>
+Source Code: <a href="https://github.com/jdbalgos/robotic-arm"><i class="large github icon"></i></a>

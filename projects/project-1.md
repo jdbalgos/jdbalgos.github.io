@@ -1,44 +1,113 @@
 ---
 layout: project
 type: project
-image: images/micromouse.jpg
-title: Micromouse
-permalink: projects/micromouse
+image: images/project-iot-image-9.jpg
+title: Web Based Portable Home Control System
+permalink: projects/web-based-portable-home-control-system
 # All dates must be YYYY-MM-DD format!
-date: 2015-07-01
+date: 2018-02-28
 labels:
-  - Robotics
-  - Arduino
-  - C++
-summary: My team developed a robotic mouse that won first place in the 2015 UH Micromouse competition.
+  - IoT
+  - Python
+  - Raspberry Pi
+summary: My team presented a project of home automation as our thesis in our university.
 ---
 
 <div class="ui small rounded images">
-  <img class="ui image" src="../images/micromouse-robot.png">
-  <img class="ui image" src="../images/micromouse-robot-2.jpg">
-  <img class="ui image" src="../images/micromouse.jpg">
-  <img class="ui image" src="../images/micromouse-circuit.png">
+  <img class="ui image" src="../images/project-iot-image-1.jpg">
+  <img class="ui image" src="../images/project-iot-image-2.jpg">
+  <img class="ui image" src="../images/project-iot-image-9.jpg">
+  <img class="ui image" src="../images/project-iot-image-7.jpg">
 </div>
 
-Micromouse is an event where small robot “mice” solve a 16 x 16 maze.  Events are held worldwide.  The maze is made up of a 16 by 16 gird of cells, each 180 mm square with walls 50 mm high.  The mice are completely autonomous robots that must find their way from a predetermined starting position to the central area of the maze unaided.  The mouse will need to keep track of where it is, discover walls as it explores, map out the maze and detect when it has reached the center.  having reached the center, the mouse will typically perform additional searches of the maze until it has found the most optimal route from the start to the center.  Once the most optimal route has been determined, the mouse will run that route in the shortest possible time.
+This project was focused on making a wireless portable control system that can control the wireless device outdoor by logging in the end-user account on the website in any web browser via internet connection. It can also control the lighting and appliances on and off wirelessly and provision for additional controlled switch. The wireless device can handle appliances such as Television, Electric Fan, Flat Iron, Top-mount Refrigerator and other appliances that are low to medium powered.
 
-For this project, I was the lead programmer who was responsible for programming the various capabilities of the mouse.  I started by programming the basics, such as sensor polling and motor actuation using interrupts.  From there, I then programmed the basic PD controls for the motors of the mouse.  The PD control the drive so that the mouse would stay centered while traversing the maze and keep the mouse driving straight.  I also programmed basic algorithms used to solve the maze such as a right wall hugger and a left wall hugger algorithm.  From there I worked on a flood-fill algorithm to help the mouse track where it is in the maze, and to map the route it takes.  We finished with the fastest mouse who finished the maze within our college.
+For this project, I was the lead programmer who was responsible for the software side of the project. From installing raspian OS to developing its GUI in python tkinter, creating the CentOS server droplet in digital ocean to developing it to a web server that is running in python flask, and developing the program of ESP8266 via arduino IDE
 
-Here is some code that illustrates how we read values from the line sensors:
 
+Web Server, Controller(Raspberry PI) and the Outlet itself can toggle switching ON and OFF state of the outlet. Data are stored in a database and shared as an API. Here is some example of the code of the devices sending data.
+
+DEVICE(ESP8266)
 ```js
-byte ADCRead(byte ch)
-{
-    word value;
-    ADC1SC1 = ch;
-    while (ADC1SC1_COCO != 1)
-    {   // wait until ADC conversion is completed   
-    }
-    return ADC1RL;  // lower 8-bit value out of 10-bit data from the ADC
+void update_send_to_server(String switch_position, boolean switch_status){
+  StaticJsonBuffer<300> JSONbuffer;
+  JsonObject& JSONencoder = JSONbuffer.createObject();
+  JSONencoder["switch_position"] = switch_position;
+  JSONencoder["device_name"] = DeviceID;
+  JSONencoder["switch_status"] = switch_status;
+  char JSONmessageBuffer[300];
+  JSONencoder.prettyPrintTo(JSONmessageBuffer, sizeof(JSONmessageBuffer));
+  Serial.println(JSONmessageBuffer);
+  HTTPClient http;
+  http.begin("http://" + eepromIP +"/switchhttp");
+  http.addHeader("Content-Type", "application/json");
+  int httpCode = http.POST(JSONmessageBuffer); 
+  String payload = http.getString(); 
+  http.end(); 
 }
 ```
 
-You can learn more at the [UH Micromouse Website](http://www-ee.eng.hawaii.edu/~mmouse/about.html).
+CONTROLLER(Rasberry PI)
 
+```js
+def postServer(device_name, switch_position, value, server_ip, timeout_delay):
+    if value == 1: #
+        newValue = "ON"
+    elif value == 0:
+        newValue = "OFF"
+    request_query = 'http://' + server_ip + '/postupdate'
+    payload = {'device_name': device_name, 'switch_position':switch_position, 'status': newValue}
+    req = requests.post(request_query,payload,timeout=timeout_delay)
 
+def postSwitch(ip_address, switch_position, value, server_ip, timeout_delay):
+    if value == 1: #
+        newValue = "true"
+    elif value == 0:
+        newValue = "false"
+    if switch_position == 1:
+        switch_type = "Switch1"
+    elif switch_position == 2:
+        switch_type = "Switch2"
+    try:
+        request_query = "http://" + ip_address + "/query?" + switch_type + "=" + newValue
+        print(request_query)
+        req = requests.post(request_query, timeout=timeout_delay)
+    except Exception as e:
+        print('errorT:', e)
+```
+
+WEB SERVER
+```js
+@app.route('/postupdate', methods=['POST','GET'])
+def postupdate():
+    if request.method == 'POST':
+        device_name = request.form['device_name']
+        switch_position = request.form['switch_position']
+        status = request.form['status']
+        if switch_position == "1":
+            if status == "ON":
+                query = "UPDATE devices SET switchOneStatus = 0 WHERE deviceName = \"" + device_name + "\";"
+            elif status == "OFF":
+                query = "UPDATE devices SET switchOneStatus = 1 WHERE deviceName = \"" + device_name + "\";"
+        elif switch_position == "2":
+            if status == "ON":
+                query = "UPDATE devices SET switchTwoStatus = 0 WHERE deviceName = \"" + device_name + "\";"
+            elif status == "OFF":
+                query = "UPDATE devices SET switchTwoStatus = 1 WHERE deviceName = \"" + device_name + "\";"
+        
+        conn = MySQLdb.connect(host="localhost",user="root",passwd="Password123!", db="myflaskapp")
+        c = conn.cursor()   
+        result = c.execute(query)
+        conn.commit()
+        conn.close()
+        c.close()
+        if result > 0:
+            return 'done'
+        else:
+            return 'error'
+```
+
+You can see how it works [here](https://www.youtube.com/watch?v=_NttntY7BJg).
+
+You can see the full source code [here](https://github.com/jdbalgos/portable-home-control-system).
 

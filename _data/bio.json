@@ -6,7 +6,7 @@
     "email": "jdbalgos@gmail.com",
     "phone": "",
     "website": "https://jdbalgos.github.io",
-    "summary": "I am a Linux Server Administrator located in Philippines with personal interest in Linux and Automation.",
+    "summary": "I am a Linux Server Administrator located in Philippines.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -22,7 +22,7 @@
       },
       {
         "network": "linkedin",
-        "username": "john-david-balgos-11b170a4",
+        "username": "jdbalgos",
         "url": "https://www.linkedin.com/in/john-david-balgos-11b170a4"
       }
     ]
@@ -108,7 +108,8 @@
       "level": "",
       "keywords": [
         "Mkdocs",
-        "Bookstack"
+        "Bookstack",
+        "Mediawiki"
       ]
     },
     {

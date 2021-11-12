@@ -26,6 +26,6 @@ markdown: kramdown
 include: [_data]
 
 # BEGIN ANSIBLE MANAGED BLOCK
-host: 0.0.0.0
-port: 8009
+#host: 0.0.0.0
+#port: 8009
 # END ANSIBLE MANAGED BLOCK
