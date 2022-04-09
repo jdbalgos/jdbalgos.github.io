@@ -6,13 +6,13 @@ pipeline {
     stage('Build image') {
       steps {
         dir('compile') {
-          sh "docker build -t jdbalgos/portfolio:latest -t jdbalgos/portfolio:jenkins-1.{$BUILD_NUMBER} --build-arg CACHEBUST=`date +%s` ."
+          sh "docker build -t jdbalgos/portfolio:latest -t jdbalgos/portfolio:jenkins-1.$BUILD_NUMBER --build-arg CACHEBUST=`date +%s` ."
           }
         }
       }
     stage('Push') {
       steps {
-        sh "docker image push jdbalgos/portfolio:jenkins-1.{$BUILD_NUMBER}"
+        sh "docker image push jdbalgos/portfolio:jenkins-1.$BUILD_NUMBER"
         sh 'docker image push jdbalgos/portfolio:latest'
       }
     }
