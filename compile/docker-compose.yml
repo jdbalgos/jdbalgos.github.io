@@ -1,0 +1,7 @@
+version: "2"
+services:
+  portfolio:
+    container_name: portfolio_deploy
+    image: jdbalgos/jekyll-portfolio:deploy
+    ports:
+      - 4000:4000

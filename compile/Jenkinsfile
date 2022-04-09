@@ -1,0 +1,20 @@
+pipeline {
+  agent {
+    label 'docker-agent'
+  }
+  stages {
+    stage('Build image') {
+      steps {
+        dir('compile') {
+          sh 'DATE=$(date +%s)'
+          sh 'docker build -t jdbalgos/portfolio:latest -t jdbalgos/portfolio:$DATE --build-arg CACHEBUST=$DATE .'
+          }
+        }
+      }
+    stage('Push') {
+      steps {
+        sh 'docker image push --all-tags jdbalgos/portfolio:latest'
+      }
+    }
+  }
+}
