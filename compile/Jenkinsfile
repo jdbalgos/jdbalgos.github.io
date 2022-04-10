@@ -16,5 +16,14 @@ pipeline {
         sh 'docker image push jdbalgos/portfolio:latest'
       }
     }
+    stage('Delete previous build') {
+      steps {
+        script {
+          def buildNumber = currentBuild.number
+          OLD_BUILD_NUMBER = buildNumber - 1
+        }
+        sh "docker image rm jdbalgos/portfolio:jenkins-1.$OLD_BUILD_NUMBER"
+      }
+    }
   }
 }
