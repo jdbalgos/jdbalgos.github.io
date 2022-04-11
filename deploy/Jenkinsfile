@@ -1,5 +1,5 @@
 pipeline {
-  agent { test-agent }
+  agent { label 'test-agent' }
   stages {
     stage('Remove Old Container') {
       steps {
