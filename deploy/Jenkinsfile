@@ -1,0 +1,18 @@
+pipeline {
+  agent { test-agent }
+  stages {
+    stage('Remove Old Container') {
+      steps {
+        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+          sh 'docker-compose -f deploy/docker-compose.yml down'
+          sh 'docker image rm jdbalgos/portfolio:latest'
+        }
+      }
+    }
+    stage('Get New Container') {
+      steps {
+        sh 'docker-compose -f deploy/docker-compose.yml up -d'
+      }
+    }
+  }
+}
