@@ -25,4 +25,4 @@ WORKDIR /srv/jekyll
 RUN sed -i 's/^#host/host/' _config.yml && \
     sed -i 's/^#port: [0-9][0-9][0-9][0-9]/port: 4000/' _config.yml
 
-CMD /usr/local/bin/jekyll serve --livereload --trace --baseurl ""
+CMD /usr/local/bin/jekyll serve --baseurl ""
