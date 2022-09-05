@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label 'build-agent'
+    label 'test-agent'
   }
   stages {
     stage('Build image') {
@@ -12,7 +12,7 @@ pipeline {
       }
     stage('Push') {
       steps {
-        sh "docker image push jdbalgos/portfolio:jenkins-1.$BUILD_NUMBER"
+        sh "docker image push jdbalgos/portfolio:jenkins-2.$BUILD_NUMBER"
         sh 'docker image push jdbalgos/portfolio:latest'
       }
     }
@@ -22,7 +22,9 @@ pipeline {
           def buildNumber = currentBuild.number
           OLD_BUILD_NUMBER = buildNumber - 1
         }
-        sh "docker image rm jdbalgos/portfolio:jenkins-1.$OLD_BUILD_NUMBER"
+        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+          sh "docker image rm jdbalgos/portfolio:jenkins-2.$OLD_BUILD_NUMBER"
+        }
       }
     }
   }
