@@ -4,6 +4,7 @@ RUN dnf install -y ruby \
     ruby-devel \
     "@Development Tools" && \
     gem install jekyll -v 4.2.2 && \
+    if [[ -f /etc/yum/protected.d/systemd.conf ]];then rm -f /etc/yum/protected.d/systemd.conf; fi && \
     dnf remove -y ruby-devel \
     "@Development Tools" && \
     dnf clean -y all && \
