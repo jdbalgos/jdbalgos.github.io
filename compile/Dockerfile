@@ -1,10 +1,10 @@
-FROM rockylinux:8.5
+FROM rockylinux:9.0
 
-RUN dnf install -y ruby-2.5.9 \
-    ruby-devel-2.5.9 \
+RUN dnf install -y ruby \
+    ruby-devel \
     "@Development Tools" && \
-    gem install jekyll -v 4.2.1 && \
-    dnf remove -y ruby-devel-2.5.9 \
+    gem install jekyll -v 4.2.2 && \
+    dnf remove -y ruby-devel \
     "@Development Tools" && \
     dnf clean -y all && \
     rm -rf /var/cache/dnf/*
