@@ -54,14 +54,25 @@
       ]
     },
     {
+      "name": "Cloud Server Deployments",
+      "level": "",
+      "keywords": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Alibaba Cloud",
+        "Tencent Cloud"
+      ]
+    },
+    {
       "name": "Virtualization/Containerization",
       "level": "",
       "keywords": [
+        "Docker",
         "VMware Vcenter",
         "Proxmox",
         "Virtualbox",
-        "LXC",
-        "Docker"
+        "LXC"
       ]
     },
     {
@@ -91,6 +102,7 @@
       "name": "Systems Monitoring",
       "level": "",
       "keywords": [
+        "Zabbix",
         "Solarwinds",
         "Nagios"
       ]
@@ -170,11 +182,29 @@
   ],
   "work": [
     {
+      "company": "Trend Network Inc",
+      "position": "Linux Server Engineer",
+      "website": "",
+      "startDate": "2022-04-24",
+      "endDate": "Present",
+      "summary": "Handles company websites and Linux Server Deployments",
+      "highlights": [
+        "Deployment of servers and support for development till production",
+        "Buying of domain names, setting up DNS and registering it to CDN",
+        "Active monitoring of domain names SSL certificates and reissuing if necessary",
+        "Setting up complex Nginx configuration files for load balancing and reverse proxy",
+        "Adding BASH scripts for teams 'quality of life'",
+        "Automating tasks via Telegram API using Python modules.",
+        "Cloning of website for companies new welcome page",
+        "Setting up of DNS records, HTTP/S redirects, actively changing websites links for redirects."
+      ]
+    },
+    {
       "company": "Conduent",
       "position": "Linux Server Administrator",
       "website": "",
       "startDate": "2021-01-11",
-      "endDate": "Present",
+      "endDate": "2022-04-27",
       "summary": "L1-L2 server technician for Dev/UAT/Prod servers",
       "highlights": [
         "Part of the Global command center that is based in Sandy, US",
