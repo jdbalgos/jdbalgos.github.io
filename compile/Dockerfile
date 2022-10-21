@@ -3,6 +3,7 @@ FROM rockylinux:9.0
 RUN dnf install -y ruby \
     ruby-devel \
     "@Development Tools" && \
+    gem install webrick && \
     gem install jekyll -v 4.2.2 && \
     if [[ -f /etc/yum/protected.d/systemd.conf ]];then rm -f /etc/yum/protected.d/systemd.conf; fi && \
     dnf remove -y ruby-devel \
